@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Management</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header id="home" class="header">
+    <nav class="navbar">
+      <div class="navbar-left">
+        <button class="menu-toggle">☰</button>
+        <!-- <img src="data:image/jpeg;base64,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" alt=" Events" class="logo"> -->
+        <h1>EVENT</h1>
+        <div class="company-info">
+          <p class="certification">ISO 9001:2024 Certified Company</p>
+          <p class="phone-number">+91-987654321</p>
+        </div>
+      </div>
+      <div class="navbar-right">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#service">Services</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Let’s Talk</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Carousel Background and Overlay -->
+    <div class="carousel"></div>
+    <div class="overlay"></div>
+
+    <!-- Main Content -->
+    <div class="content">
+      <p class="tagline">Take a Trip into Paradise</p>
+      <h1>Partner with  Event Management in Kerala</h1>
+      <!-- <p class="certification">ISO 9001:2015 Certified Company</p> -->
+      <a href="#contact" class="cta-button">Let's Talk</a>
+     
+    </div>
+  </header>
+
+
+  <main>
+   
+
+<!-- slider  -->
+
+<div class="carousel-section">
+    <h2 class="carousel-heading">Event Highlights</h2>
+    <p class="carousel-description">Explore some of the memorable moments captured from our recent events. From live music performances to traditional celebrations, each image tells a unique story.</p>
+    
+    <div id="slide" class="image-slider">
+        <button class="slider-button slider-button-prev">&#8249;</button>
+        <div class="slider-track">
+            <div class="slider-item" onclick="openImage(this)">
+                <img src="https://pranayamweddings.com/wp-content/uploads/2023/10/a-200-1-683x1024.jpg" alt="Event 1">
+               
+            </div>
+            <div class="slider-item" onclick="openImage(this)">
+                <img src="https://media.npr.org/assets/img/2022/11/04/gettyimages-1183414292-1-_slide-30784f99ac10f059c242d37e91d05ead475854f4.jpg" alt="Wedding Ceremony">
+                
+            </div>
+            <div class="slider-item" onclick="openImage(this)">
+                <img src="https://media-api.xogrp.com/images/f4570601-a1e6-4802-86fb-ad9e988066fe~rs_768.h" alt="Concert Night">
+               
+            </div>
+            <div class="slider-item" onclick="openImage(this)">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2021/6/CT/SG/RD/12461086/birthday-party-decorators.jpg" alt="Traditional Boat Ride">
+                
+            </div>
+            <div class="slider-item" onclick="openImage(this)">
+                <img src="https://www.reveriesocial.com/wp-content/uploads/2024/01/Bold-Color-Maximalist.webp" alt="Outdoor Celebration">
+                
+            </div>
+            <div class="slider-item" onclick="openImage(this)">
+                <img src="https://crystallinestudio.com/blogmoreimg/13_crystalline.jpg" alt="Outdoor Celebration">
+                
+            </div>
+            <div class="slider-item" onclick="openImage(this)">
+                <img src="https://www.betaprices.com/wp-content/uploads/2022/07/events-decoration-in-nigeria-5.jpg" alt="Outdoor Celebration">
+                
+            </div>
+            <div class="slider-item" onclick="openImage(this)">
+                <img src="https://cdn.speedsize.com/60594423-b60e-4dfc-bb30-f46193ea9dfc/https://www.wedgewoodweddings.com/hs-fs/hubfs/Tunnel-BeachWedding-PacificView.jpg?width=750&name=Tunnel-BeachWedding-PacificView.jpg/mxw_480,f_auto" alt="Outdoor Celebration">
+                
+            </div>
+        </div>
+        <button class="slider-button slider-button-next">&#8250;</button>
+    </div>
+</div>
+
+   <!-- about  -->
+
+
+
+<section id="about" class="about-section">
+    <div class="about-content">
+        <p class="subtitle">Our Expertise</p>
+        <h2>Event Management for Every Occasion</h2>
+        <p>At <strong>Your Events Co.</strong>, we are passionate about creating unforgettable experiences. From corporate conferences to intimate weddings, our dedicated team delivers exceptional events tailored to your vision. With years of experience and a network of top vendors, we handle every detail with precision and creativity, ensuring a seamless and memorable event.</p>
+        <a style="text-decoration: none;" href="#service" class="about-btn">Explore Our Services</a>
+    </div>
+    <div class="about-images">
+        <div class="image-box"><img src="https://i.pinimg.com/736x/7a/dc/7d/7adc7d324d95ff634279f4ae9b2a7288.jpg" alt="Event Image 1"></div>
+        <div class="image-box"><img src="https://i.pinimg.com/736x/76/c7/dd/76c7dda4d17c4f9387ac30656862d752.jpg" alt="Event Image 2"></div>
+    <div class="image-box"><img src="https://www.magnoliaevents.in/wp-content/uploads/2021/06/Destination-Wedding-Decor.jpg" alt="Event Image 3"></div>
+        <div class="image-box"><img src="https://i.pinimg.com/736x/f1/65/21/f1652181792497b49c16a6a7d0cd546a.jpg" alt="Event Image 4"></div>
+    </div>
+</section>
+
+
+
+      
+ <!-- service  -->
+
+      <section id="service" class="services-section">
+        <h2 class="section-title">Services by Our Event Management Team</h2>
+        <p class="section-description">
+          We offer comprehensive event management services, including corporate events, weddings, private parties, and more.
+        </p>
+      
+        <div class="services-container">
+          <!-- Service Card 1 -->
+          <div class="service-card">
+            <img src="https://d1jhy9q0556ci9.cloudfront.net/wp-content/uploads/2018/11/riverwind-meet-corporate-events-main-1200x675.jpg" alt="Corporate Event Management" class="card-image">
+            <h3>Corporate Event Management</h3>
+            <p>If you want to make a statement at your next corporate event, we’re here to help.</p>
+           
+          </div>
+      
+          <!-- Service Card 2 -->
+          <div class="service-card">
+            <img src="https://media.istockphoto.com/id/1186214696/photo/hindu-wedding-ritual-wherein-bride-and-groom-hand.jpg?s=612x612&w=0&k=20&c=fTlNejRdY7dkvk742auNgI3j6Ve9UqqWSnb3QJ-D2gw=" alt="Wedding Planners" class="card-image">
+            <h3>Wedding Planners</h3>
+            <p>Plan the perfect wedding event to be remembered forever.</p>
+         
+          </div>
+      
+          <!-- Service Card 3 -->
+          <div class="service-card">
+            <img src="https://eventsmanagementkerala.com/wp-content/uploads/elementor/thumbs/front-view-rich-arch-decorated-with-adorable-fresh-roses-flowers-q6tn21cv10nwdkkn53p5dhtg5rdlgj16wzttmhdpnc.webp" alt="Destination Weddings" class="card-image">
+            <h3>Destination Weddings</h3>
+            <p>Celebrate your special day in paradise with a luxurious wedding experience.</p>
+          
+          </div>
+          <div class="service-card">
+            <img src="https://5.imimg.com/data5/PQ/PP/UU/SELLER-3570425/destination-weddings-service-500x500.png" alt="Destination Weddings" class="card-image">
+            <h3>Beach Weddings</h3>
+            <p>Exchange vows with the sound of waves and golden sands. Our beach weddings offer romance in a breathtaking coastal setting.</p>
+          </div><div class="service-card">
+            <img src="https://cdn.pixabay.com/photo/2016/11/23/15/48/audience-1853662_1280.jpg" alt="Concerts & Shows" class="card-image" alt="Destination Weddings" class="card-image">
+            <h3>Concerts & Shows</h3>
+            <p>Bring excitement to your audience with world-class concert and show management, ensuring a seamless and engaging experience.</p>
+          </div>
+          <div class="service-card">
+            <img src="https://busybee.com.mt/wp-content/uploads/2022/02/private_party_700_x_467px.jpg" alt="Destination Weddings" class="card-image">
+            <h3>Private Parties</h3>
+            <p>Whether it's a milestone birthday or an intimate gathering, we craft private parties that are as unique as your occasion.</p>
+          </div>
+          <div class="service-card">
+            <img src="https://www.jessideas.com/wp-content/uploads/2018/09/Mahindra-launch-Mazzaro-img-02-1-688x500.jpg" alt="Wedding Planners" class="card-image">
+            <h3>Product Launch Events</h3>
+            <p>Make your product launch unforgettable with impactful setups, audience engagement, and precise execution.</p>
+          </div>
+          <div class="service-card">
+            <img src="https://tr-globalevents.com/wp-content/uploads/2023/03/award-ceremonies-gala-dinners-1160x653.webp" alt="Wedding Planners" class="card-image">
+            <h3>Gala Dinners & Award Ceremonies</h3>
+            <p>Host a grand gala or award ceremony with elegance and style, delivering a remarkable experience for your guests.</p>
+          </div>
+          <!-- Additional Service Cards -->
+          <!-- Add more cards as needed in similar format -->
+        </div>
+      
+      </section>
+ 
+      <!-- testimonial  -->
+
+      <section id="testimonial" class="testimonial-carousel">
+        <div class="carousel-background-overlay"></div>
+        <h2>TESTIMONIALS</h2>
+        <div class="carousel-container">
+            
+            <!-- Testimonial 1 -->
+            <div class="carousel-slide">
+                <div class="testimonial">
+                    <div class="client-info">
+                        <img src="https://st3.depositphotos.com/1037987/15097/i/450/depositphotos_150975580-stock-photo-portrait-of-businesswoman-in-office.jpg" alt="Client 1" class="client-image">
+                        <div>
+                            <h4 class="client-name">Sophie Turner</h4>
+                            <p class="client-title">Marketing Director, XYZ Corp</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "The team at EventPro transformed our annual conference into a memorable experience! The attention to detail and seamless execution made it an absolute pleasure to work with them."
+                    </p>
+                    <div class="star-rating">
+                        <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="carousel-slide">
+                <div class="testimonial">
+                    <div class="client-info">
+                        <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?cs=srgb&dl=pexels-simon-robben-55958-614810.jpg&fm=jpg" alt="Client 2" class="client-image">
+                        <div>
+                            <h4 class="client-name">Michael Green</h4>
+                            <p class="client-title">CEO, Green Solutions</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "Our company gala was an outstanding success thanks to EventPro! The event was beautiful, well-organized, and ran smoothly from start to finish. They truly exceeded our expectations!"
+                    </p>
+                    <div class="star-rating">
+                        <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="carousel-slide">
+                <div class="testimonial">
+                    <div class="client-info">
+                        <img src="https://www.georgetown.edu/wp-content/uploads/2022/02/Jkramerheadshot-scaled-e1645036825432-1050x1050-c-default.jpg" alt="Client 3" class="client-image">
+                        <div>
+                            <h4 class="client-name">Ava Martinez</h4>
+                            <p class="client-title">Event Coordinator, City Hall</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "From planning to execution, EventPro delivered an amazing experience for our charity fundraiser. The decor, ambiance, and service were impeccable. Highly recommend!"
+                    </p>
+                    <div class="star-rating">
+                        <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </section>
+    
+    
+
+      <!-- blog  -->
+      <section id="blog" class="blog-section">
+        <div class="blog-content">
+            <h2>Our Latest Blog Posts</h2>
+            <p>Stay updated with our insights, tips, and stories about event planning and management. Explore our blog for inspiration and information!</p>
+    
+            <div class="blog-posts">
+                <div class="blog-post">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbDjJvlyy7mIhGTpDCQ872g8hY5RRJr-isXg&s" alt="Wedding Planning" class="blog-image">
+                    <h3>10 Tips for Planning a Perfect Wedding</h3>
+                    <p>Planning a wedding can be overwhelming. Here are ten essential tips to help you create the perfect day without stress.</p>
+                    <button class="read-more-btn">Read More</button>
+                </div>
+                <div class="blog-post">
+                    <img src="https://media.licdn.com/dms/image/C4E12AQH5jEOSVoTNrg/article-cover_image-shrink_720_1280/0/1521408028421?e=2147483647&v=beta&t=qOG3XwdUffamtNyxV3L5UWKhPKRu80s2gcBgZxI8Hgw" alt="Event Venue" class="blog-image">
+                    <h3>Choosing the Right Venue for Your Event</h3>
+                    <p>Your venue sets the tone for your event. Learn how to choose the right one that fits your style and budget.</p>
+                    <button class="read-more-btn">Read More</button>
+                </div>
+                <div class="blog-post">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSunm2iLU-jR_xCHlfgtyk38Y0ILw7fLJ3lGA&s" alt="Corporate Event" class="blog-image">
+                    <h3>How to Organize a Memorable Corporate Event</h3>
+                    <p>Organizing a corporate event requires careful planning. Discover strategies to ensure your event leaves a lasting impression.</p>
+                    <button class="read-more-btn">Read More</button>
+                </div>
+                <div class="blog-post">
+                    <img src="https://staredmontonbanquets.ca/wp-content/uploads/2022/07/62c0dac14d3d1.jpg" alt="Private Party" class="blog-image">
+                    <h3>Creative Ideas for Unique Private Parties</h3>
+                    <p>Want to host a memorable private party? Check out these creative ideas to make your celebration truly unique.</p>
+                    <button class="read-more-btn">Read More</button>
+                </div>
+                <div class="blog-post">
+                    <img src="https://www.cvent.com/sites/default/files/image/2024-01/Header%20Image%20-%20Trends%202024.webp" alt="Event Trends" class="blog-image">
+                    <h3>Top Event Trends to Watch This Year</h3>
+                    <p>Stay ahead of the curve with these exciting trends in the event management industry. Discover what’s popular and what’s coming next!</p>
+                    <button class="read-more-btn">Read More</button>
+                </div>
+                <div class="blog-post">
+                    <img src="https://balloonpro.in/wp-content/themes/sangpress-2.0/assets/images/gal-1.webp" alt="Budgeting for Events" class="blog-image">
+                    <h3>How to Effectively Budget for Your Event</h3>
+                    <p>Budgeting for an event can be challenging. Learn how to allocate your resources wisely to ensure a successful and memorable occasion.</p>
+                    <button class="read-more-btn">Read More</button>
+                </div>
+                
+
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- contact  -->
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2>Contact</h2>
+                <p>Our dedicated customer support team is here every day to help you with any inquiries.</p>
+            </div>
+            <div class="contact-details">
+                <p>Email: hello@eventxxx.com</p>
+                <p>Phone: 9876543210</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i><a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+      <!-- stat  -->
+ 
+      <section id="stat" class="stats-section">
+        <h2>SUCCESSFULLY COMPLETED 7000+ PROJECTS</h2>
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-box">
+                    <span class="stat-number" data-target="200">1</span>
+                    <span class="stat-label">CORPORATE CLIENTS</span>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-box">
+                    <span class="stat-number" data-target="2000">1</span>
+                    <span class="stat-label">EVENTS</span>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-box">
+                    <span class="stat-number" data-target="4000">1</span>
+                    <span class="stat-label">EXHIBITIONS</span>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-box">
+                    <span class="stat-number" data-target="1000">1</span>
+                    <span class="stat-label">ACTIVATIONS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+      
+    </main>
+
+
+
+    <footer>
+        <div class="footer-container">
+          <div class="footer-logo">
+            <h2> Events</h2>
+            <p class="footer-tagline">ISO 9001:2024 Certified Company</p>
+            <div class="footer-social-icons">
+              <!-- Social Media Icons -->
+              <a href="#"><i style="color: white;" class="fa-brands fa-instagram"></i></a>
+              <a href="#"> <i  style="color: white;" class="fa-brands fa-youtube"></i></a>
+              <a href="#"><i  style="color: white;" class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i  style="color: white;" class="fa-brands fa-linkedin"></i></a>
+              <a href="#"><i  style="color: white;" class="fa-brands fa-twitter"></i></a>
+            </div>
+            <p class="footer-description">
+              Planning a full event has never been easier! ® Events is an ISO certified Event Management Company based in Kerala, India, offering various services to make your events stress-free and memorable.
+            </p>
+          </div>
+      
+          <div class="footer-links">
+            <div class="footer-column">
+              <h3>QUICK LINKS</h3>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#">Venues</a></li>
+                <li><a href="#slide">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>SERVICES</h3>
+              <ul>
+                <li><a href="#">Corporate Events</a></li>
+                <li><a href="#">Wedding Planner</a></li>
+                <li><a href="#">Music & Entertainment</a></li>
+                <li><a href="#">Private Parties</a></li>
+                <li><a href="#">Destination Wedding</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>OTHER LINKS</h3>
+              <ul>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#testimoniak">Testimonials</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>CONTACT INFO</h3>
+              <address>
+               xxxxxxxx
+               xxxxxxxxxx,
+               9876543210
+              </address>
+            </div>
+          </div>
+      
+          <div class="footer-bottom">
+            <div class="footer-contact-info">
+              <p>+91-987654321 | <a href="mailto:melodiaeventmanagement@gmail.com">eventmanagement@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+    
+</body>
+<script src="script.js"></script>
+
+</html>
+

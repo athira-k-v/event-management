@@ -1,0 +1,1110 @@
+
+
+  /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body, html {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    height: 100%;
+  }
+
+/* header  */
+
+  .header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+  }
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  .menu-toggle {
+    font-size: 24px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+  }
+  .logo {
+    height: 50px;
+    margin-left: 10px;
+  }
+  .company-info {
+    margin-left: 15px;
+  }
+  .certification, .phone-number {
+    font-size: 12px;
+    color: #fff;
+  }
+  .navbar-right {
+    display: flex;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  .nav-links a:hover {
+    color: #f5b971;
+  }
+  
+  /* Carousel background with zoom effect */
+  .carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: slide 18s infinite, zoom 6s infinite alternate;
+  }
+  @keyframes slide {
+    0% { background-image: url('https://weddingmarketplace-587932-ruby.b587932.stage.eastus.az.svc.builder.ai//rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8fa616af2586d224e938b19e52668b3dccb7c06c/wedding%20item.jfif'); }
+    33% { background-image: url('https://dominicanexpert.com/wp-content/uploads/2017/07/dominican_republic_destination_weddings_decor_inspiration_138_ceremony_area_1080.jpg'); }
+    66% { background-image: url('https:grandweddings.co.in/wp-content/uploads/2020/01/Wedding-Event.jpg'); }
+    100% { background-image: url('https://www.ohyesevents.com/img/destination-3.jpeg'); }
+  }
+
+  @keyframes zoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+  }
+  
+  /* Overlay for darkening effect */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Main Content Styling */
+  .content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .tagline {
+    color: #f5b971;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  .certification {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f5b971;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .cta-button:hover {
+    background-color: #e6a958;
+  }
+  
+  /* Social Icons */
+  .social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  .social-icons a {
+    color: #ddd;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  .social-icons a:hover {
+    color: #f5b971;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+    }
+    .menu-toggle {
+      display: block;
+    }
+    .nav-links {
+      display: none; /* Hide menu links initially */
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+    .nav-links a {
+      font-size: 18px;
+      padding: 10px 0;
+      width: 100%;
+    }
+    .navbar-right {
+      width: 100%;
+    }
+    .navbar.show .nav-links {
+      display: flex; /* Show links when menu is toggled */
+    }
+  
+    .content {
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 90%;
+    }
+  }
+  
+
+  /* main  */
+
+ /* about  */
+
+ .about-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background-image: url("https://images.pexels.com/photos/1128782/pexels-photo-1128782.jpeg?cs=srgb&dl=pexels-mastercowley-1128782.jpg&fm=jpg");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    color: #ece5e5;
+}
+
+.about-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust the transparency here */
+    z-index: 1; /* Ensures the overlay is on top of the background image */
+}
+
+.about-content,
+.about-images {
+    position: relative;
+    z-index: 2; /* Brings the content above the overlay */
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.4;
+    animation: moveParticles 30s linear infinite;
+    z-index: 2;
+}
+
+.about-content,
+.about-images {
+    position: relative;
+    z-index: 3;
+}
+
+.about-content {
+    max-width: 45%;
+    animation: slideIn 1.5s ease-out;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #edeaea;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #ff5733;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.about-btn:hover {
+    transform: scale(1.05);
+}
+
+.about-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    max-width: 50%;
+}
+
+.image-box {
+    overflow: hidden;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.image-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-box:hover img {
+    transform: scale(1.1);
+}
+
+
+@keyframes slideIn {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes moveParticles {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 100% 100%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .about-content,
+    .about-images {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .about-content h2 {
+        font-size: 2rem;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+    }
+
+    .about-images {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-images {
+        grid-template-columns: 1fr;
+    }
+}  
+
+
+
+
+/* service  */
+
+  .services-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: url('background.jpg') center/cover no-repeat;
+    color: #333;
+    position: relative;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .section-description {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 40px;
+  }
+  
+  /* Services Container */
+  .services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* Service Card Styling */
+  .service-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 280px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  
+  .service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .service-card h3 {
+    font-size: 1.4rem;
+    margin: 15px;
+    color: #333;
+  }
+  
+  .service-card p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0 15px 15px;
+    line-height: 1.5;
+  }
+  
+  .learn-more {
+    display: inline-block;
+    font-size: 1rem;
+    color: #ff8a50;
+    margin: 10px 15px 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .learn-more:hover {
+    color: #ff5722;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .services-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .service-card {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 2rem;
+    }
+  
+    .section-description {
+      font-size: 1rem;
+    }
+  }
+
+
+  /* blog  */
+
+  .blog-section {
+    background-color: #f5f5f5;
+    padding: 50px 20px;
+    color: #333;
+}
+
+.blog-content {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.blog-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.blog-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.blog-post {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures images fit nicely */
+    transition: transform 0.3s;
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Crop image to cover the area */
+}
+
+.blog-post h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.blog-post p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.read-more-btn {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #ff5733;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .blog-content h2 {
+        font-size: 2rem;
+    }
+
+    .blog-post h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* testimonial  */
+
+/* Testimonial Carousel Section */
+.testimonial-carousel {
+    position: relative;
+    padding: 40px 20px;
+    color: #171515;
+    text-align: center;
+    overflow: hidden;
+}
+.carousel-background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), /* Dark transparent overlay */
+        url('https://images.unsplash.com/photo-1587271636175-90d58cdad458?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kaWFuJTIwd2VkZGluZyUyMGRlY29yfGVufDB8fDB8fHww'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.testimonial {
+    background: rgba(255, 255, 255, 0.8); /* Increased transparency */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #333;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.client-image {
+    border-radius: 50%;
+    width: 60px; /* Smaller size */
+    height: 60px; /* Smaller size */
+    margin-right: 10px;
+}
+
+.client-name {
+    font-weight: bold;
+    margin: 0;
+}
+
+.client-title {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.testimonial-text {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin: 10px 0;
+    color: #333;
+}
+
+.star-rating {
+    color: #FFD700; /* Gold color for stars */
+}
+
+h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    z-index: 2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .testimonial-carousel {
+        padding: 20px;
+    }
+    .testimonial {
+        max-width: 90%;
+    }
+}
+
+
+
+/* footer  */
+
+footer {
+    position: relative;
+    background: 
+    linear-gradient(rgba(80, 79, 80, 0.7), rgba(72, 71, 71, 0.7)), /* Dark transparent overlay */
+
+    url('https:/theweddingavenue.co.uk/wp-content/uploads/2023/12/outdoor-wedding-venue-at-night-960x801.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 3rem 1rem;
+    font-family: Arial, sans-serif;
+  }
+  
+  footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+  
+  .footer-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-logo h2 {
+    font-size: 1.8rem;
+  }
+  
+  .footer-tagline {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-social-icons a {
+    margin: 0 0.3rem;
+  }
+  
+  .footer-description {
+    max-width: 600px;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .footer-column {
+    flex: 1 1 200px;
+    padding: 1rem;
+  }
+  
+  .footer-column h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-column ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 1rem;
+    width: 100%;
+  }
+  
+  .footer-contact-info {
+    font-size: 0.9rem;
+  }
+  
+  .footer-contact-info a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-contact-info a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .footer-links {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-column {
+      text-align: center;
+    }
+  }
+  
+
+
+  /* slider  */
+
+  /* Carousel Section Container */
+.carousel-section {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.carousel-heading {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.carousel-description {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Image Slider */
+.image-slider {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slider-item {
+    min-width: 200px;
+    margin: 0 15px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slider-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.slider-item:hover img {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.content-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.content-overlay h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.content-overlay p {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+}
+
+.slider-button {
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: #333;
+}
+
+.slider-button-prev {
+    left: 10px;
+}
+
+.slider-button-next {
+    right: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .slider-item {
+        min-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+/* contact  */
+
+/* Contact Section Styling */
+.contact-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    background-color: #f5f5f5;
+    overflow: hidden; /* Ensures overlay fits within section bounds */
+}
+
+.contact-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://media.istockphoto.com/id/479977238/photo/table-setting-for-an-event-party-or-wedding-reception.jpg?s=612x612&w=0&k=20&c=yIKLzW7wMydqmuItTTtUGS5cYTmrRGy0rXk81AltdTA=');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4); /* Darkens the image to create a black overlay effect */
+    z-index: 1;
+}
+
+.contact-container {
+    position: relative;
+    z-index: 2; /* Ensures content appears above the overlay */
+    max-width: 800px;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.9); /* Light background to make content stand out */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+
+.contact-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    padding: 50px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.contact-header {
+    position: relative;
+    width: 100%;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.contact-header h2 {
+    font-size: 2em;
+    color: #4b4b4b;
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    font-size: 1em;
+    color: #666666;
+}
+
+.contact-details {
+    margin-bottom: 30px;
+}
+
+.contact-details p {
+    color: #333333;
+    font-size: 1em;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #666666;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #8c7ae6;
+}
+
+.contact-form {
+    width: 100%;
+    display: grid;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.contact-form button {
+    padding: 12px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #e4a960;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #f0130f;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .contact-container {
+        padding: 30px;
+    }
+
+    .contact-header h2 {
+        font-size: 1.8em;
+    }
+
+    .contact-form button {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+}
+
+/* stat  */
+/* Base styling for the section */
+.stats-section {
+    background-color: #ffffff; /* White background */
+    color: #4a4a4a; /* Dark gray text for contrast */
+    text-align: center;
+    padding: 50px 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Heading styling */
+.stats-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+/* Flex container for stats items */
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Individual stat item styling */
+.stat-item {
+    text-align: center;
+    flex: 1 1 200px;
+    max-width: 220px;
+}
+
+/* Box styling */
+.stat-box {
+    background-color: #fafafa; /* Subtle light gray background */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Number styling */
+.stat-number {
+    font-size: 42px;
+    font-weight: 700;
+    color: #D35400; /* Warm accent color for numbers */
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Label styling */
+.stat-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a4a4a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .stats-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
